@@ -36,6 +36,7 @@
 - 可視化：matplotlib,seaborn
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 ## 5. 前処理
 - **不要なカラム削除**  
 データ数を減らすため以下のカラムを削除した。
@@ -63,6 +64,14 @@ import seaborn as sns
     - `["city"]`：`county`で代替可能なため削除
 
 ## 6. 特徴量エンジニアリング
+ラグ特徴量：以下のカラムからそれぞれ1日前(日毎)、7日前(州毎)、30日前(月毎)の店舗ごとの合計値を比較
+- sale_dollars
+- bottles_sold
+- volume_sold_liters
+- state_bottle_cost
+- state_bottle_retail
+
+
 リットル単価
 - `["sales_per_L"]`：`sale_dollars`/`volume_sold_liters`  
 日付的特徴
